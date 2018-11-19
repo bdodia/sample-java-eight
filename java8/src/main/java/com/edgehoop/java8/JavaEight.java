@@ -15,7 +15,9 @@ public class JavaEight {
                 new Country("AUT","Austria", Continent.AUSTRALIA, 24770000),
                 new Country("DEU", "Germany", Continent.EUROPE, 81700000),
                 new Country("BRA","Brazil", Continent.SOUTH_AMERICA, 207000000),
-                new Country("GBR","United Kingdon", Continent.EUROPE,65100000)
+                new Country("GBR","United Kingdon", Continent.EUROPE,65100000),
+                new Country("KEN", "Kenya", Continent.AFRICA, 46000000),
+                new Country("MUS", "Mauritius", Continent.AFRICA, 1260000)
         );
 
         Optional<Country> countryWithHighestPopulation =
