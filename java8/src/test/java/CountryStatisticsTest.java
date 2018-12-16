@@ -3,6 +3,9 @@ import com.edgehoop.java8.Country;
 import com.edgehoop.java8.CountryStatistics;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.Optional;
+
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
@@ -32,5 +35,10 @@ public class CountryStatisticsTest {
         countryStatistics.addCountry(australia);
     }
 
+    @Test
+    public void getCountryWithHighestPopulation() {
+        Optional<Country> result = countryStatistics.countryWithHighestPopulation();
+        assertThat(result.get().getName(), equalToIgnoringCase("brazil"));
+    }
 
 }
