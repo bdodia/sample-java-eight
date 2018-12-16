@@ -7,7 +7,7 @@ import static java.util.stream.Collectors.toList;
 public class CountryStatistics {
 
         //Setup sample country data
-        private List<Country> countries = Arrays.asList();
+        private List<Country> countries = new ArrayList<>();
 
         //Populate country list
         public void addCountry(Country country) {
