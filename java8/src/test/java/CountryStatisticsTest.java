@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import static org.hamcrest.CoreMatchers.not;
@@ -55,5 +56,21 @@ public class CountryStatisticsTest {
         List<String> results = countryStatistics.threeCountriesWithPopulationsAbove40000000();
         assertThat(results.size(), is(3));
         assertThat(results, not(containsInAnyOrder("Australia", "Austria")));
+    }
+
+    @Test
+    public void getCountByContinent() {
+        Map<Continent, Long> results = countryStatistics.countByContinent();
+        assertThat(results.get(Continent.EUROPE), is(3L));
+        assertThat(results.get(Continent.AFRICA), is(2L));
+    }
+
+    //Failing test
+    //TODO write prod code
+    @Test
+    public void getCountriesByContinent() {
+        Map<Continent, List<String>> results = countryStatistics.countriesByContinent();
+        assertThat(results.get(Continent.AFRICA), containsInAnyOrder("Kenya", "Mauritius"));
+        assertThat(results.get(Continent.EUROPE), containsInAnyOrder("Austria", "Germany", "United Kingdom"));
     }
 }
