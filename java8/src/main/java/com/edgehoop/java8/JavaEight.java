@@ -17,6 +17,7 @@ public class JavaEight {
         countryStatistics.countryWithHighestPopulation();
         countryStatistics.countriesInEurope();
         countryStatistics.threeCountriesWithPopulationsAbove40000000();
+        countryStatistics.countriesByContinent();
 
     }
 }
