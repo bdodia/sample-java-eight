@@ -4,9 +4,11 @@ import com.edgehoop.java8.CountryStatistics;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.equalToIgnoringCase;
@@ -39,6 +41,13 @@ public class CountryStatisticsTest {
     public void getCountryWithHighestPopulation() {
         Optional<Country> result = countryStatistics.countryWithHighestPopulation();
         assertThat(result.get().getName(), equalToIgnoringCase("brazil"));
+    }
+
+    @Test
+    public void getCountriesInEurope() {
+        List<String> results = countryStatistics.countriesInEurope();
+        assertThat(results.size(), is(3));
+        assertThat(results, containsInAnyOrder("Austria", "Germany", "United Kingdom"));
     }
 
 }
