@@ -69,8 +69,9 @@ public class CountryStatisticsTest {
     //TODO write prod code
     @Test
     public void getCountriesByContinent() {
-        Map<Continent, List<String>> results = countryStatistics.countriesByContinent();
-        assertThat(results.get(Continent.AFRICA), containsInAnyOrder("Kenya", "Mauritius"));
-        assertThat(results.get(Continent.EUROPE), containsInAnyOrder("Austria", "Germany", "United Kingdom"));
+        Map<Continent, List<Country>> results = countryStatistics.countriesByContinent();
+        System.out.println(results.get(Continent.AFRICA));
+        assertThat(results.get(Continent.AFRICA), containsInAnyOrder(kenya, mauritius));
+        assertThat(results.get(Continent.EUROPE), containsInAnyOrder(austria, germany, unitedKingdom));
     }
 }
