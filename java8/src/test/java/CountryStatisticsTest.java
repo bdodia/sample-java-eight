@@ -50,4 +50,10 @@ public class CountryStatisticsTest {
         assertThat(results, containsInAnyOrder("Austria", "Germany", "United Kingdom"));
     }
 
+    @Test
+    public void getPopulationFilter() {
+        List<String> results = countryStatistics.threeCountriesWithPopulationsAbove40000000();
+        assertThat(results.size(), is(3));
+        assertThat(results, not(containsInAnyOrder("Australia", "Austria")));
+    }
 }
